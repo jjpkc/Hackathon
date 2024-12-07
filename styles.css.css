@@ -1,0 +1,113 @@
+body{
+  padding: 25px;
+  background-color: beige;
+}
+.title {
+	color: brown;
+	font-family:Parkinsans;
+}
+.big{
+  padding: 12px 8px 12px 40px;
+  font-family:Parkinsans;
+  width:1275px;
+  background-color: #Ab784E;
+  color: white;
+
+}
+
+
+.container{
+  font-family:Parkinsans;
+  margin-right: auto;
+  margin-left: auto;
+  gap:160px;
+  display: flex;
+}
+
+.right {
+  padding-top: 100px ;
+}
+.sloth {
+  font-size: 100px;
+}
+
+#sloth{
+  font-size: 200px;
+  margin-right: 700px;
+  top: -70px; /* Moves the calendar up by 50px */
+
+}
+  /* Calendar container */
+      .calendar {
+         width: 450px;
+         border: 1px solid #ddd;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         margin-left: auto;
+         position: relative;
+         top: -70px; /* Moves the calendar up by 50px */
+      }
+      
+      .calendar {
+    width: 450px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    transform: translateY(-70px); /* Moves the calendar up by 50px */
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the top */
+    align-items: flex-start; /* Moves items up in the container */
+}
+
+  /* Calendar container */
+        .calendar {
+            width: 450px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: auto;
+            margin-top: -70px;
+        }
+
+        /* Calendar header styling */
+        .calendar-header {
+            text-align: center;
+            background-color: #Ab784E;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Days of the week styling */
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: #Ab784E;
+            color: white;
+        }
+
+        .calendar-days div {
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Date cells styling */
+        .calendar-dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        .calendar-dates div {
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        /* Highlight today */
+        .today {
+            background-color: #ffdd57;
+            font-weight: bold;
+        }

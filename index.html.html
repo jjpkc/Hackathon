@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <head><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+    <title>Get Productive!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <div class="big">
+  <h1 class="big-header">Get to work!</h1>
+  <p>For your productivity</p>
+  
+</div>
+      <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  min-width: 250px;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  width: 550px;
+  margin-left: auto;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #DFD7C8;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #C0A392;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #B5651D;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  width: 550px;
+  margin-left: auto;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="right">
+  <div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Type here!">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li>Type something into the box to create a task!</li>
+  <li class="checked">Click the task to check it off!</li>
+  <li>Press the "x" to discard a task!</li>
+</ul>
+</div>
+<div class="left">
+  <h2>Pomodoro Timer</h2>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/tI94goLL3t0?si=-SovDowMW52FRtrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div>
+
+
+
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+    document.getElementById("sloth").innerHTML = "&#129445;&#128512;";  // Sloth with a smile
+
+    // Change to frowny face after 5 seconds
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128546";
+        }, 10000);  // 5000 milliseconds = 5 seconds
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128557;";
+        }, 20000);  // 5000 milliseconds = 5 seconds
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128128;";
+        }, 30000);  // 5000 milliseconds = 5 seconds
+  }
+}, false);
+
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}</script>
+<body style="text-align: center">
+    </body>
+
+<h id="sloth">&#129445;</h>
+<script>
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128546";
+        }, 10000);  // 5000 milliseconds = 5 seconds
+    </script>
+<script>
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128557;";
+        }, 20000);  // 5000 milliseconds = 5 seconds
+    </script>
+<script>
+        setTimeout(function() {
+            document.getElementById("sloth").innerHTML = "&#129445;&#128128;";
+        }, 30000);  // 5000 milliseconds = 5 seconds
+    </script>
+
+ <title>Simple HTML Calendar - November 2024</title>
+     <!-- Calendar Container -->
+    <div class="calendar">
+        <!-- Month and Year Header -->
+        <div class="calendar-header">November 2024</div>
+
+        <!-- Days of the Week -->
+        <div class="calendar-days">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+
+        <!-- Calendar Dates -->
+        <div class="calendar-dates">
+            <!-- Blank spaces for days before the month starts on Friday -->
+            <div></div> <div></div> <div></div> <div></div> <div></div> <div class="today">1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div> <div>6</div> <div>7</div> <div>8</div> <div>9</div> <div>10</div> <div>11</div> <div>12</div> <div>13</div> <div>14</div> <div>15</div> <div>16</div> <div>17</div> <div>18</div> <div>19</div><div>20</div> <div>21</div> <div>22</div> <div>23</div> <div>24</div> <div>25</div> <div>26</div><div>27</div> <div>28</div> <div>29</div> <div>30</div> 
+</body>
+</html>
+
